@@ -15,7 +15,7 @@ tiempos_proceso = []
 def proceso(env, nombre, cpu, tiempo_ejecuto, instruccion):
     yield env.timeout(tiempo_ejecuto)
     print(f'{nombre}llega en CPU en {env.now}')
-
+ 
     while instruccion > 0:
         with cpu.request() as req:
             yield req
